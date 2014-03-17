@@ -46,7 +46,7 @@ var doSubmit;
 				boostat : 0.1,
 				maxboostedstep : 10,
 				forcestepdivisibility : 'none',
-				postfix : '$'
+				prefix : '$'
 			});
 
 			function doFormSubmitSuccess(response) {

@@ -8,9 +8,6 @@
 <html>
 <body>
 	<div class="container-fluid">
-		<div class="jumbotron">
-			
-		</div>
 	</div>
 </body>
 </html>

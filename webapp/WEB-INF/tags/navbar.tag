@@ -5,10 +5,9 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-<div class="container-fluid">
+<nav class="navbar navbar-default">
 	<div class="navbar-header">
-		<a class="navbar-brand glyphicon glyphicon-home" href="#" onclick="load('index.g');"> <spring:message
-				code="${title}" text="${title}" /></a>
+		<a class="navbar-brand glyphicon glyphicon-home" href="#" onclick="load('index.g');"></a>
 	</div>
 	<ul class="nav navbar-nav">
 		<c:forEach var="entry" items="${items}">
@@ -28,4 +27,4 @@
 			</c:if>
 		</c:forEach>
 	</ul>
-</div>
+</nav>

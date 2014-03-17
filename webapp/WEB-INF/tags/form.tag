@@ -9,6 +9,7 @@
 <h3>
 	<spring:message code="${caption}" text="${caption}" />
 </h3>
+<hr>
 <form:form id="${id}" modelAttribute="${modelAttribute}" class="form-horizontal">
 	<jsp:doBody />
 	<form:hidden path="version" />

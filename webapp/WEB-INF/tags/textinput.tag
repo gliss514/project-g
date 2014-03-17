@@ -11,7 +11,7 @@
 <div class="form-group">
 	<gtag:label label="${label}" mandatory="${mandatory}" />
 	<div class="col-md-8 col-sm-pad">
-		<form:input path="${name}" id="${name}" class="form-control input-sm" placeholder="${placeholder}" />
+		<form:input path="${name}" id="${name}" class="form-control" placeholder="${placeholder}" />
 		<form:errors path="${name}" cssClass="error" />
 	</div>
 </div>

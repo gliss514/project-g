@@ -9,11 +9,15 @@
 <body>
 	<div class="glass container">
 		<gtag:form modelAttribute="menu" caption="gres.title.create.menu">
-			<gtag:textinput name="name" label="gres.label.name" mandatory="yes" placeholder="Name"></gtag:textinput>
-			<gtag:textinput name="code" label="gres.label.code" mandatory="yes" placeholder="Code"></gtag:textinput>
+			<gtag:textinput name="name" label="label.name" mandatory="yes" placeholder="Name"></gtag:textinput>
+			<gtag:textinput name="code" label="label.code" mandatory="yes" placeholder="Code"></gtag:textinput>
 			<gtag:select items="${menuCategory}" name="category" label="gres.label.category" mandatory="yes"></gtag:select>
-			<gtag:fileinput name="image" label="gres.label.image"></gtag:fileinput>
 			<gtag:numberinput name="price" label="gres.label.price" mandatory="yes"></gtag:numberinput>
+			<gtag:fileinput name="image" label="gres.label.image"></gtag:fileinput>
+			<gtag:buttoncontainer>
+				<gtag:submit/>
+				<gtag:button href="main.g" label="label.cancel"/>
+			</gtag:buttoncontainer>
 		</gtag:form>
 	</div>
 </body>

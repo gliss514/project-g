@@ -13,7 +13,7 @@
 <div class="form-group">
 	<gtag:label label="${label}" mandatory="${mandatory}" ></gtag:label>
 	<div class="col-md-8 col-sm-pad">
-		<form:select class="form-control input-sm" path="${name}" id="${name}" items="${items}" onchange="${onchange}" readonly="${readonly}" />
+		<form:select class="form-control" path="${name}" id="${name}" items="${items}" onchange="${onchange}" readonly="${readonly}" />
 		<form:errors path="${name}" cssClass="error" />
 	</div>
 </div>
