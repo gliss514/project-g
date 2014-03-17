@@ -32,16 +32,22 @@ var doSubmit;
 				"success" : doFormSubmitSuccess
 			});
 
-//			forms.find('.datepicker').datepicker({
-//				format : 'dd/mm/yyyy',
-//				autoclose : true
-//			});
-//			forms.find('.duallist').bootstrapDualListbox();
-//			forms.find('.fileinput').bootstrapFileInput();
-//			var $slider = forms.find('.slider').slider();
-//			$slider.on('slide', function(ev) {
-//				$('#sliderVal').val(ev.value);
-//			});
+			forms.find('.datepicker').datepicker({
+				format : 'dd/mm/yyyy',
+				autoclose : true
+			});
+			forms.find('.duallist').bootstrapDualListbox();
+			forms.find('.fileinput').bootstrapFileInput();
+			forms.find('.touchspin').TouchSpin({
+				min : 0,
+				max : 1000000,
+				step : 0.1,
+				decimals : 2,
+				boostat : 0.1,
+				maxboostedstep : 10,
+				forcestepdivisibility : 'none',
+				postfix : '$'
+			});
 
 			function doFormSubmitSuccess(response) {
 				doAfterLoad(($container.html(response)));

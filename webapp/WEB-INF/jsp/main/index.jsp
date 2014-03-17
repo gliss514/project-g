@@ -20,13 +20,17 @@
 	<div id="workspace"></div>
 	<div class="container-fluid">
 		<p align="center">
-			<font size="-2">&nbsp;&nbsp;Project G Version 1.0. Copyright (c) 2014, All Rights Reserved.</font>
+			<font size="-2">&nbsp;&nbsp;Project G Version 1.0. Copyright (c) 2014, All Rights Reserved. Email : gliss0514@gmail.com</font>
 		</p>
 	</div>
 </body>
 <script src="projg/js/jquery.js"></script>
 <script src="projg/js/jquery.form.js"></script>
 <script src="projg/js/projg.js" type="text/javascript"></script>
+<script src="projg/js/fileinput.js" type="text/javascript"></script>
+<script src="projg/js/datepicker.js" type="text/javascript"></script>
+<script src="projg/js/duallistbox.js" type="text/javascript"></script>
+<script src="projg/js/touchspin.js" type="text/javascript"></script>
 <script src="themes/bootstrap/js/bootstrap.js"></script>
 <script>
 	$("#workspace").load("main.g");
