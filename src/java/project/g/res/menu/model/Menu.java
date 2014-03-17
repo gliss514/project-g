@@ -1,14 +1,26 @@
 package project.g.res.menu.model;
 
-import org.springframework.web.multipart.MultipartFile;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 import project.g.core.data.BaseObject;
 
 public class Menu extends BaseObject {
+
+	@NotEmpty
 	private String name;
+
+	@NotEmpty
 	private String code;
-	private MultipartFile image;
+
+	// @Transient
+	// private MultipartFile image;
+
+	@NotEmpty
 	private String category;
+
+	@NotNull
 	private Double price;
 
 	public String getName() {
@@ -27,13 +39,13 @@ public class Menu extends BaseObject {
 		this.code = code;
 	}
 
-	public MultipartFile getImage() {
-		return image;
-	}
-
-	public void setImage(MultipartFile image) {
-		this.image = image;
-	}
+	// public MultipartFile getImage() {
+	// return image;
+	// }
+	//
+	// public void setImage(MultipartFile image) {
+	// this.image = image;
+	// }
 
 	public String getCategory() {
 		return category;

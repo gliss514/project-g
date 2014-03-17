@@ -13,7 +13,7 @@
 			<gtag:textinput name="code" label="label.code" mandatory="yes" placeholder="Code"></gtag:textinput>
 			<gtag:select items="${menuCategory}" name="category" label="gres.label.category" mandatory="yes"></gtag:select>
 			<gtag:numberinput name="price" label="gres.label.price" mandatory="yes"></gtag:numberinput>
-			<gtag:fileinput name="image" label="gres.label.image"></gtag:fileinput>
+<%-- 			<gtag:fileinput name="image" label="gres.label.image"></gtag:fileinput> --%>
 			<gtag:buttoncontainer>
 				<gtag:submit/>
 				<gtag:button href="main.g" label="label.cancel"/>

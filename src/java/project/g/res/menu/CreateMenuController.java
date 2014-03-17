@@ -1,9 +1,11 @@
 package project.g.res.menu;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -22,5 +24,19 @@ public class CreateMenuController {
 		ModelAndView modelView = new ModelAndView("menu/createMenu");
 		modelView.addObject("menuCategory", menuService.getMenuCategory());
 		return modelView;
+	}
+
+	@RequestMapping(method = RequestMethod.POST)
+	public ModelAndView post(@Valid @ModelAttribute("menu") Menu menu, BindingResult result) {
+		String page = "menu/createMenu";
+		if (!result.hasErrors()) {
+			page = "redirect:viewMenu.g";
+			menuService.insert(menu);
+		} else {
+			System.out.println(result.getAllErrors().get(0).getDefaultMessage());
+		}
+		ModelAndView model = new ModelAndView(page);
+		model.addObject("menuCategory", menuService.getMenuCategory());
+		return model;
 	}
 }
