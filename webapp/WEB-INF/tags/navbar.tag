@@ -1,26 +1,31 @@
+<%@ attribute name="title" required="true" type="java.lang.String"%>
+<%@ attribute name="items" required="true" type="java.util.List" rtexprvalue="true"%>
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <div class="container-fluid">
-	<!-- Brand and toggle get grouped for better mobile display -->
 	<div class="navbar-header">
-		<a class="navbar-brand" href="#" onclick="load('index.g');">G Solution</a>
+		<a class="navbar-brand glyphicon glyphicon-home" href="#" onclick="load('index.g');"> <spring:message
+				code="${title}" text="${title}" /></a>
 	</div>
 	<ul class="nav navbar-nav">
-		<li><a href="#">Menu</a></li>
-		<li><a href="#">Category</a></li>
-		<li><a href="#">Admin</a></li>
-		<li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
+		<c:forEach var="entry" items="${items}">
+			<c:if test="${empty entry.childs}">
+				<li><a onclick="load('${entry.uri}')"><spring:message code="${entry.label}" text="${entry.label}" /></a></li>
+			</c:if>
+			<c:if test="${!empty entry.childs}">
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><spring:message code="${entry.label}" text="${entry.label}" /><b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<c:forEach var="childs" items="${entry.childs}">
+							<li><a onclick="load('${childs.uri}')"><spring:message
+										code="${childs.label}" text="${childs.label}" /></a></li>
+						</c:forEach>
+					</ul>
+				</li>
+			</c:if>
+		</c:forEach>
 	</ul>
 </div>

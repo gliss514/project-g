@@ -54,7 +54,7 @@
 
 	<bean id="themeResolver"
 		class="org.springframework.web.servlet.theme.CookieThemeResolver">
-		<property name="defaultThemeName" value="default" />
+		<property name="defaultThemeName" value="flatly-ui" />
 	</bean>
 
 	<mvc:interceptors>

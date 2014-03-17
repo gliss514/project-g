@@ -8,8 +8,9 @@
 <html>
 <body>
 	<div class="container-fluid">
-		<hr/>
-		<div class="jumbotron">Project G, your complete business solution.</div>
+		<div class="jumbotron">
+			
+		</div>
 	</div>
 </body>
 </html>

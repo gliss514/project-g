@@ -16,13 +16,11 @@
 <link href="projg/css/projg.css" rel="stylesheet">
 </head>
 <body>
-	<gres:navbar/>
+	<gres:navbar title="gres.navbar.title" items="${navbarItems}"/>
 	<div id="workspace"></div>
 	<div class="container-fluid">
-		<p></p>
 		<p align="center">
-			<font size="-2">&nbsp;&nbsp;Gres Version 1.0. Copyright (c)
-				2014, All Rights Reserved.</font>
+			<font size="-2">&nbsp;&nbsp;Project G Version 1.0. Copyright (c) 2014, All Rights Reserved.</font>
 		</p>
 	</div>
 </body>
