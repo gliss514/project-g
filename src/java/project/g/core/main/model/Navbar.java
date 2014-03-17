@@ -12,16 +12,19 @@ public class Navbar extends BaseObject {
 
 	private String uri;
 
+	private String href;
+
 	private List<Navbar> childs;
 
 	public Navbar() {
 	}
 
-	public Navbar(String label, String uri, List<Navbar> childs) {
+	public Navbar(String label, String uri, List<Navbar> childs, String href) {
 		super();
 		this.label = label;
 		this.uri = uri;
 		this.childs = childs;
+		this.href = href;
 	}
 
 	public String getLabel() {
@@ -48,4 +51,11 @@ public class Navbar extends BaseObject {
 		this.childs = childs;
 	}
 
+	public String getHref() {
+		return href;
+	}
+
+	public void setHref(String href) {
+		this.href = href;
+	}
 }

@@ -8,7 +8,7 @@
 <html>
 <body>
 	<div class="glass container">
-		<gtag:form modelAttribute="menu" caption="gres.label.menu">
+		<gtag:form modelAttribute="menu" caption="gres.label.main">
 			
 		</gtag:form>
 	</div>
