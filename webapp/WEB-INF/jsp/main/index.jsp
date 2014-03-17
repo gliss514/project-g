@@ -3,7 +3,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="gres" tagdir="/WEB-INF/tags"%>
+<%@ taglib prefix="gtag" tagdir="/WEB-INF/tags"%>
 
 <!DOCTYPE html>
 <html>
@@ -16,7 +16,7 @@
 <link href="projg/css/projg.css" rel="stylesheet">
 </head>
 <body>
-	<gres:navbar title="gres.navbar.title" items="${navbarItems}"/>
+	<gtag:navbar title="gres.navbar.title" items="${navbarItems}"/>
 	<div id="workspace"></div>
 	<div class="container-fluid">
 		<p align="center">
