@@ -13,3 +13,8 @@ div.right-align {
 	padding-right : 15px;
 	padding-bottom : auto;
 }
+
+a:hover {
+	cursor: hand !important;
+	text-decoration: none !important;
+}
