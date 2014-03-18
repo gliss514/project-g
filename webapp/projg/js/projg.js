@@ -32,22 +32,7 @@ var doSubmit;
 				"success" : doFormSubmitSuccess
 			});
 
-			forms.find('.datepicker').datepicker({
-				format : 'dd/mm/yyyy',
-				autoclose : true
-			});
-			forms.find('.duallist').bootstrapDualListbox();
-			forms.find('.fileinput').bootstrapFileInput();
-			forms.find('.touchspin').TouchSpin({
-				min : 0,
-				max : 1000000,
-				step : 0.1,
-				decimals : 2,
-				boostat : 0.1,
-				maxboostedstep : 10,
-				forcestepdivisibility : 'none',
-				prefix : '$'
-			});
+			initComponents(forms);
 
 			function doFormSubmitSuccess(response) {
 				doAfterLoad(($container.html(response)));
@@ -57,5 +42,30 @@ var doSubmit;
 				jqXHR.setRequestHeader("requester", currentPath);
 			}
 		}
+		
+		initComponents(forms){
+			//Date Picker
+			forms.find('.datepicker').datepicker({
+				format : 'dd/mm/yyyy',
+				autoclose : true
+			});
+			
+			//Dual List
+			forms.find('.duallist').bootstrapDualListbox();
+			
+			//File Input
+			forms.find('.fileinput').bootstrapFileInput();
+			
+			//Touch Spin
+			forms.find('.touchspin').TouchSpin({
+				min : 0,
+				max : 1000000,
+				step : 0.1,
+				decimals : 2,
+				boostat : 0.1,
+				maxboostedstep : 10,
+				forcestepdivisibility : 'none'
+			});
+		};
 	}());
 })(jQuery);

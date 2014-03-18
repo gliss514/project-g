@@ -13,6 +13,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 <link href="<spring:theme code="css"/>" rel="stylesheet" type="text/css" />
+<link href="projg/css/datepicker.css" rel="stylesheet">
+<link href="projg/css/duallistbox.css" rel="stylesheet">
+<link href="projg/css/slider.css" rel="stylesheet">
+<link href="projg/css/switch.css" rel="stylesheet">
 <link href="projg/css/projg.css" rel="stylesheet">
 </head>
 <body>
@@ -31,6 +35,7 @@
 <script src="projg/js/datepicker.js" type="text/javascript"></script>
 <script src="projg/js/duallistbox.js" type="text/javascript"></script>
 <script src="projg/js/touchspin.js" type="text/javascript"></script>
+<script src="projg/js/switch.js" type="text/javascript"></script>
 <script src="themes/bootstrap/js/bootstrap.js"></script>
 <script>
 	$("#workspace").load("main.g");
