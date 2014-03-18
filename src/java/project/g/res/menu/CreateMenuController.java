@@ -31,6 +31,7 @@ public class CreateMenuController {
 		String page = "menu/createMenu";
 		if (!result.hasErrors()) {
 			page = "redirect:viewMenu.g";
+			menu.setImagePath(menu.getImage().getOriginalFilename());
 			menuService.insert(menu);
 		} else {
 			System.out.println(result.getAllErrors().get(0).getDefaultMessage());

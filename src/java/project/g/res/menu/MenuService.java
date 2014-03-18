@@ -29,6 +29,12 @@ public class MenuService {
 		return menuDataSource;
 	}
 
+	public List<Menu> find(Menu menu) {
+		return mongoTemplate.find(
+				new Query(Criteria.where("name").is(menu.getName())
+						.andOperator(Criteria.where("code").is(menu.getCode()))), Menu.class);
+	}
+
 	public List<Menu> findAll() {
 		return mongoTemplate.findAll(Menu.class);
 	}

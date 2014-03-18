@@ -44,7 +44,7 @@
 		</c:forEach>
 	</ul>
 	<div class="right-align pull-right">
-		<button class="btn btn-default navbar-btn" data-toggle="modal"
+		<button class="btn btn-default navbar-btn btn-sm" data-toggle="modal"
 			data-target="#myModal">
 			<span class="glyphicon glyphicon-user"></span>
 		</button>
@@ -53,8 +53,7 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal"
-						aria-hidden="true">&times;</button>
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					<h4 class="modal-title">User Settings</h4>
 				</div>
 				<div class="modal-body list-group">

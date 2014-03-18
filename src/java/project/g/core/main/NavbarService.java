@@ -25,7 +25,7 @@ public class NavbarService {
 
 		// Admin
 		List<Navbar> adminPanel = new ArrayList<Navbar>();
-		adminPanel.add(createNavbar("gres.title.manage.menu", "createMenu.g"));
+		adminPanel.add(createNavbar("gres.title.manage.menu", "viewMenu.g"));
 		contents.add(createNavbar("navbar.admin", "#", adminPanel));
 
 		// Themes
@@ -34,6 +34,7 @@ public class NavbarService {
 		themes.add(createHrefNavbar("theme.lumen", "?theme=lumen-ui"));
 		themes.add(createHrefNavbar("theme.yeti", "?theme=yeti-ui"));
 		themes.add(createHrefNavbar("theme.flatly", "?theme=flatly-ui"));
+		themes.add(createHrefNavbar("theme.cerulean", "?theme=cerulean-ui"));
 		contents.add(createNavbar("navbar.themes", "#", themes));
 
 		return contents;

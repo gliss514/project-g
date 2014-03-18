@@ -43,7 +43,7 @@ var doSubmit;
 			}
 		}
 		
-		initComponents(forms){
+		function initComponents(forms){
 			//Date Picker
 			forms.find('.datepicker').datepicker({
 				format : 'dd/mm/yyyy',

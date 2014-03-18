@@ -20,6 +20,8 @@ public class ViewMenuController {
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView begin(@ModelAttribute("menu") Menu menu, HttpServletRequest req) {
 		ModelAndView modelView = new ModelAndView("menu/viewMenu");
+		modelView.addObject("menuCategory", menuService.getMenuCategory());
+		modelView.addObject("results", menuService.findAll());
 		return modelView;
 	}
 }

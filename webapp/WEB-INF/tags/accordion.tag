@@ -9,7 +9,7 @@
 <div class="panel panel-default">
 	<div class="panel-heading">
 		<h4 class="panel-title">
-			<a class="glyphicon glyphicon-cutlery" data-toggle="collapse" data-parent="${parId}" href="${id}">
+			<a data-toggle="collapse" data-parent="${parId}" href="${id}">
 				<spring:message code="${caption}" text="${caption}"></spring:message>
 			</a>
 		</h4>

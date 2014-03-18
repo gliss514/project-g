@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="gtag" tagdir="/WEB-INF/tags"%>
 
 <html>
@@ -16,7 +16,7 @@
 			<gtag:fileinput name="image" label="gres.label.image"></gtag:fileinput>
 			<gtag:buttoncontainer>
 				<gtag:submit/>
-				<gtag:button href="main.g" label="label.cancel"/>
+				<gtag:button href="viewMenu.g" label="label.cancel"/>
 			</gtag:buttoncontainer>
 		</gtag:form>
 	</div>
