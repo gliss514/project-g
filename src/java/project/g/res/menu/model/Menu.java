@@ -3,6 +3,8 @@ package project.g.res.menu.model;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.data.annotation.Transient;
+import org.springframework.web.multipart.MultipartFile;
 
 import project.g.core.data.BaseObject;
 
@@ -14,8 +16,10 @@ public class Menu extends BaseObject {
 	@NotEmpty
 	private String code;
 
-	// @Transient
-	// private MultipartFile image;
+	@Transient
+	private MultipartFile image;
+
+	private String imagePath;
 
 	@NotEmpty
 	private String category;
@@ -39,13 +43,13 @@ public class Menu extends BaseObject {
 		this.code = code;
 	}
 
-	// public MultipartFile getImage() {
-	// return image;
-	// }
-	//
-	// public void setImage(MultipartFile image) {
-	// this.image = image;
-	// }
+	public MultipartFile getImage() {
+		return image;
+	}
+
+	public void setImage(MultipartFile image) {
+		this.image = image;
+	}
 
 	public String getCategory() {
 		return category;
@@ -63,4 +67,11 @@ public class Menu extends BaseObject {
 		this.price = price;
 	}
 
+	public String getImagePath() {
+		return imagePath;
+	}
+
+	public void setImagePath(String imagePath) {
+		this.imagePath = imagePath;
+	}
 }
