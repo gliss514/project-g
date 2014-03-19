@@ -64,6 +64,7 @@
 	<!-- End Theme -->
 
 	<!-- Database -->
+	<mongo:repositories base-package="project.g" />
 	<mongo:mongo id="mongo" host="localhost" />
 
 	<!-- org.springframework.data.mongodb.core.MongoTemplate -->

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import project.g.res.menu.model.Menu;
+import project.g.res.menu.model.MenuService;
 
 @RequestMapping(value = "/createMenu")
 @Controller
@@ -32,7 +33,7 @@ public class CreateMenuController {
 		if (!result.hasErrors()) {
 			page = "redirect:viewMenu.g";
 			menu.setImagePath(menu.getImage().getOriginalFilename());
-			menuService.insert(menu);
+			menuService.save(menu);
 		} else {
 			System.out.println(result.getAllErrors().get(0).getDefaultMessage());
 		}
