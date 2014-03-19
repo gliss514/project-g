@@ -28,6 +28,14 @@ public class MenuService extends ProjGService<Menu> {
 		return menuDataSource;
 	}
 
+	public Map<String, String> getMenuImages() {
+		Map<String, String> menuImages = new HashMap<String, String>();
+		menuImages.put("projg/images/main/fusilli_definition_picture_167290.jpg", "1");
+		menuImages.put("projg/images/main/food_picture_01_hd_pictures_167558.jpg", "2");
+		menuImages.put("projg/images/main/food_picture_03_hd_pictures_167556.jpg", "3");
+		return menuImages;
+	}
+
 	@Override
 	protected ProjGRepository<Menu> getRepository() {
 		return projGRepository;

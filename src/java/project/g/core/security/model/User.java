@@ -7,4 +7,6 @@ import project.g.core.data.BaseObject;
 @Document
 public class User extends BaseObject {
 
+	private static final long serialVersionUID = -3264669655420468440L;
+
 }

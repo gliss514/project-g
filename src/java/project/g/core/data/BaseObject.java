@@ -1,5 +1,6 @@
 package project.g.core.data;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import org.springframework.data.annotation.CreatedBy;
@@ -11,12 +12,15 @@ import org.springframework.data.annotation.Version;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
-public class BaseObject {
+public class BaseObject implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	private String id;
 
 	@Version
-	private int version;
+	private Long version;
 
 	@CreatedBy
 	private String createBy;
@@ -30,20 +34,20 @@ public class BaseObject {
 	@LastModifiedDate
 	private Date updateDate;
 
+	public Long getVersion() {
+		return version;
+	}
+
+	public void setVersion(Long version) {
+		this.version = version;
+	}
+
 	public String getId() {
 		return id;
 	}
 
 	public void setId(String id) {
 		this.id = id;
-	}
-
-	public int getVersion() {
-		return version;
-	}
-
-	public void setVersion(int version) {
-		this.version = version;
 	}
 
 	public String getCreateBy() {

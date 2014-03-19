@@ -56,6 +56,9 @@ var doSubmit;
 			//File Input
 			forms.find('.fileinput').bootstrapFileInput();
 			
+			//Image Picker
+			forms.find('.imagepicker').imagepicker();
+			
 			//Touch Spin
 			forms.find('.touchspin').TouchSpin({
 				min : 0,

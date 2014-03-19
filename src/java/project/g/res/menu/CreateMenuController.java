@@ -24,6 +24,7 @@ public class CreateMenuController {
 	public ModelAndView begin(@ModelAttribute("menu") Menu menu, HttpServletRequest req) {
 		ModelAndView modelView = new ModelAndView("menu/createMenu");
 		modelView.addObject("menuCategory", menuService.getMenuCategory());
+		modelView.addObject("images", menuService.getMenuImages());
 		return modelView;
 	}
 
@@ -32,13 +33,13 @@ public class CreateMenuController {
 		String page = "menu/createMenu";
 		if (!result.hasErrors()) {
 			page = "redirect:viewMenu.g";
-			menu.setImagePath(menu.getImage().getOriginalFilename());
 			menuService.save(menu);
 		} else {
 			System.out.println(result.getAllErrors().get(0).getDefaultMessage());
 		}
 		ModelAndView model = new ModelAndView(page);
 		model.addObject("menuCategory", menuService.getMenuCategory());
+		model.addObject("images", menuService.getMenuImages());
 		return model;
 	}
 }

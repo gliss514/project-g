@@ -13,7 +13,7 @@
 			<gtag:textinput name="code" label="label.code" mandatory="yes" placeholder="Code"></gtag:textinput>
 			<gtag:select items="${menuCategory}" name="category" label="gres.label.category" mandatory="yes"></gtag:select>
 			<gtag:numberinput name="price" label="gres.label.price" mandatory="yes"></gtag:numberinput>
-			<gtag:fileinput name="image" label="gres.label.image"></gtag:fileinput>
+			<gtag:imagepicker items="${images}" name="image"></gtag:imagepicker>
 			<gtag:buttoncontainer>
 				<gtag:submit/>
 				<gtag:button href="viewMenu.g" label="label.cancel"/>
@@ -21,11 +21,4 @@
 		</gtag:form>
 	</div>
 </body>
-<script type="text/javascript">
-	$('#appetizer-container').load('menuAppetizer.g');
-	$('#main-container').load('menuMain.g');
-	$('#sides-container').load('menuSides.g');
-	$('#desserts-container').load('menuDesserts.g');
-	$('#beverage-container').load('menuBeverage.g');
-</script>
 </html>

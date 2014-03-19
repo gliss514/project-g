@@ -10,6 +10,6 @@
 <div class="form-group">
 	<gtag:label label="${label}" mandatory="${mandatory}"></gtag:label>
 	<div class="col-md-8 col-sm-pad">
-		<form:input value="0" type="text" path="${name}" id="touchspin" class="touchspin"/>
+		<form:input type="text" path="${name}" id="touchspin" class="touchspin"/>
 	</div>
 </div>

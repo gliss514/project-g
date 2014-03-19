@@ -17,6 +17,7 @@
 <link href="projg/css/duallistbox.css" rel="stylesheet">
 <link href="projg/css/slider.css" rel="stylesheet">
 <link href="projg/css/switch.css" rel="stylesheet">
+<link href="projg/css/image-picker.css" rel="stylesheet">
 <link href="projg/css/projg.css" rel="stylesheet">
 </head>
 <body>
@@ -36,6 +37,7 @@
 <script src="projg/js/duallistbox.js" type="text/javascript"></script>
 <script src="projg/js/touchspin.js" type="text/javascript"></script>
 <script src="projg/js/switch.js" type="text/javascript"></script>
+<script src="projg/js/image-picker.js" type="text/javascript"></script>
 <script src="themes/bootstrap/js/bootstrap.js"></script>
 <script>
 	$("#workspace").load("main.g");

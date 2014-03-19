@@ -32,6 +32,7 @@
 						<th>Name</th>
 						<th>Category</th>
 						<th>Price</th>
+						<th>Action</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -41,6 +42,7 @@
 							<td>${menu.name}</td>
 							<td>${menu.category}</td>
 							<td>${menu.price}</td>
+							<td><gtag:action icon="pencil" tooltip="tooltip.update" url="updateMenu.g?id=${menu.id}"></gtag:action></td>
 						</tr>
 					</c:forEach>
 				</tbody>
