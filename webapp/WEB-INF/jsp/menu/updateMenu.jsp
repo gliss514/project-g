@@ -8,10 +8,9 @@
 <html>
 <body>
 	<div class="glass container">
-		<gtag:form modelAttribute="menu" caption="gres.title.create.menu" id="menu">
+		<gtag:form modelAttribute="menu" caption="${title}" id="menu">
 			<gtag:textinput name="name" label="label.name" mandatory="yes" placeholder="Name"></gtag:textinput>
 			<gtag:textinput name="code" label="label.code" mandatory="yes" placeholder="Code"></gtag:textinput>
-			<gtag:select items="${menuCategory}" name="category" label="gres.label.category" mandatory="yes"></gtag:select>
 			<gtag:numberinput name="price" label="gres.label.price" mandatory="yes"></gtag:numberinput>
 			<gtag:imagepicker items="${images}" name="image" selected="${menu.image}"></gtag:imagepicker>
 			<gtag:buttoncontainer>
@@ -21,4 +20,11 @@
 		</gtag:form>
 	</div>
 </body>
+<script type="text/javascript">
+	function refreshMenuCategory(){
+		var id = document.getElementById("id").value;
+		var dop = document.getElementById("category").value;
+		load('updateMenu.g?selectedCat=' + dop + '&id=' + id);
+	}
+</script>
 </html>

@@ -1,8 +1,11 @@
 package project.g.res.menu.model;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import javax.servlet.ServletContext;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +16,9 @@ import project.g.core.data.ProjGService;
 
 @Service
 public class MenuService extends ProjGService<Menu> {
+
+	@Autowired
+	private ServletContext servletContext;
 
 	@Autowired
 	private ProjGRepository<Menu> projGRepository;
@@ -27,8 +33,18 @@ public class MenuService extends ProjGService<Menu> {
 		return menuDataSource;
 	}
 
-	public Map<String, String> getMenuImageByCateg(String category) {
+	public Map<String, String> getMenuImageByCategory(String category) {
+		if (StringUtils.isBlank(category)) category = "MAIN";
 		Map<String, String> menuImages = new HashMap<String, String>();
+		String path = servletContext.getRealPath("projg/images/" + category);
+		String folderName = path == null ? "" : path.trim();
+		File file = new File(folderName);
+		if (file.listFiles() != null) {
+			for (File f : file.listFiles()) {
+				if (f.getName().endsWith("jpg") || f.getName().endsWith("png"))
+					menuImages.put("projg/images/" + category + "/" + f.getName(), f.getName());
+			}
+		}
 		return menuImages;
 	}
 

@@ -8,10 +8,9 @@
 <html>
 <body>
 	<div class="glass container">
-		<gtag:form modelAttribute="menu" caption="gres.title.create.menu">
+		<gtag:form modelAttribute="menu" caption="${title}">
 			<gtag:textinput name="name" label="label.name" mandatory="yes" placeholder="Name"></gtag:textinput>
 			<gtag:textinput name="code" label="label.code" mandatory="yes" placeholder="Code"></gtag:textinput>
-			<gtag:select items="${menuCategory}" name="category" label="gres.label.category" mandatory="yes"></gtag:select>
 			<gtag:numberinput name="price" label="gres.label.price" mandatory="yes"></gtag:numberinput>
 			<gtag:imagepicker items="${images}" name="image"></gtag:imagepicker>
 			<gtag:buttoncontainer>

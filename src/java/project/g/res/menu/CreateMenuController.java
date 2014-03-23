@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import project.g.core.data.WebConstant;
 import project.g.res.menu.model.Menu;
 import project.g.res.menu.model.MenuService;
 
@@ -24,7 +25,9 @@ public class CreateMenuController {
 	public ModelAndView begin(@ModelAttribute("menu") Menu menu, HttpServletRequest req) {
 		ModelAndView modelView = new ModelAndView("menu/createMenu");
 		modelView.addObject("menuCategory", menuService.getMenuCategory());
-		modelView.addObject("images", menuService.getMenuImageByCateg(menu.getCategory()));
+		String selectedCat = req.getParameter(WebConstant.CATEGORY);
+		modelView.addObject("images", menuService.getMenuImageByCategory(selectedCat));
+		modelView.addObject("title", selectedCat);
 		return modelView;
 	}
 
@@ -39,7 +42,6 @@ public class CreateMenuController {
 		}
 		ModelAndView model = new ModelAndView(page);
 		model.addObject("menuCategory", menuService.getMenuCategory());
-		model.addObject("images", menuService.getMenuImageByCateg(menu.getCategory()));
 		return model;
 	}
 }

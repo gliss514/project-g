@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import project.g.res.menu.model.Menu;
+import project.g.res.menu.model.MenuConstant;
 import project.g.res.menu.model.MenuService;
 
 @RequestMapping(value = "/viewMenu")
@@ -22,7 +23,19 @@ public class ViewMenuController {
 	public ModelAndView begin(@ModelAttribute("menu") Menu menu, HttpServletRequest req) {
 		ModelAndView modelView = new ModelAndView("menu/viewMenu");
 		modelView.addObject("menuCategory", menuService.getMenuCategory());
-		modelView.addObject("results", menuService.findByCodeLikeAndNameLikeAndCategoryLike(menu));
+
+		menu.setCategory(MenuConstant.MAIN);
+		modelView.addObject("mainResult", menuService.findByCodeLikeAndNameLikeAndCategoryLike(menu));
+
+		menu.setCategory(MenuConstant.APPETIZER);
+		modelView.addObject("appResult", menuService.findByCodeLikeAndNameLikeAndCategoryLike(menu));
+
+		menu.setCategory(MenuConstant.BEVERAGE);
+		modelView.addObject("bevResult", menuService.findByCodeLikeAndNameLikeAndCategoryLike(menu));
+
+		menu.setCategory(MenuConstant.DESSERTS);
+		modelView.addObject("desResult", menuService.findByCodeLikeAndNameLikeAndCategoryLike(menu));
+
 		return modelView;
 	}
 

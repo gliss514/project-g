@@ -10,6 +10,7 @@ public interface WebConstant {
 	String OBJID = "id";
 	String ACTION = "action";
 	String DATEFORMAT = "dd/MM/yyyy";
+	String CATEGORY = "category";
 
 	String ACTIVE = "active";
 	String INACTIVE = "inactive";

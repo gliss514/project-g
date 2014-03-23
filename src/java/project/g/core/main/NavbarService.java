@@ -26,6 +26,7 @@ public class NavbarService {
 		// Admin
 		List<Navbar> adminPanel = new ArrayList<Navbar>();
 		adminPanel.add(createNavbar("gres.title.manage.menu", "viewMenu.g"));
+		adminPanel.add(createNavbar("gres.title.manage.menu.image", "viewMenu.g"));
 		contents.add(createNavbar("navbar.admin", "#", adminPanel));
 
 		// Themes

@@ -3,6 +3,7 @@ package project.g.res.menu;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -23,12 +24,14 @@ public class UpdateMenuController {
 	private MenuService menuService;
 
 	@RequestMapping(method = RequestMethod.GET)
-	public ModelAndView begin(@ModelAttribute("menu") Menu menu, HttpServletRequest req) {
+	public ModelAndView begin(HttpServletRequest req, @ModelAttribute("menu") Menu menu) {
 		ModelAndView modelView = new ModelAndView("menu/updateMenu");
-		modelView.addObject("menuCategory", menuService.getMenuCategory());
-		modelView.addObject("images", menuService.getMenuImageByCateg(menu.getCategory()));
 		String id = (String) req.getParameter(WebConstant.OBJID);
-		modelView.addObject(menuService.findOne(id));
+		String selectedCat = (String) req.getParameter(WebConstant.CATEGORY);
+		Menu prevMenu = menuService.findOne(id);
+		modelView.addObject("images", menuService.getMenuImageByCategory(selectedCat));
+		modelView.addObject("title", selectedCat);
+		modelView.addObject(prevMenu);
 		return modelView;
 	}
 
@@ -36,15 +39,15 @@ public class UpdateMenuController {
 	public ModelAndView post(@Valid @ModelAttribute("menu") Menu menu, BindingResult result) {
 		String page = "menu/updateMenu";
 		if (!result.hasErrors()) {
+			Menu prevMenu = menuService.findOne(menu.getId());
+			BeanUtils.copyProperties(menu, prevMenu);
 			page = "redirect:viewMenu.g";
-			Menu prevObj = menuService.findOne(menu.getId());
-			menuService.save(prevObj);
+			menuService.save(prevMenu);
 		} else {
 			System.out.println(result.getAllErrors().get(0).getDefaultMessage());
 		}
 		ModelAndView model = new ModelAndView(page);
 		model.addObject("menuCategory", menuService.getMenuCategory());
-		model.addObject("images", menuService.getMenuImageByCateg(menu.getCategory()));
 		return model;
 	}
 }
