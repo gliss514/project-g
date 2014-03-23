@@ -26,7 +26,7 @@ public class UpdateMenuController {
 	public ModelAndView begin(@ModelAttribute("menu") Menu menu, HttpServletRequest req) {
 		ModelAndView modelView = new ModelAndView("menu/updateMenu");
 		modelView.addObject("menuCategory", menuService.getMenuCategory());
-		modelView.addObject("images", menuService.getMenuImages());
+		modelView.addObject("images", menuService.getMenuImageByCateg(menu.getCategory()));
 		String id = (String) req.getParameter(WebConstant.OBJID);
 		modelView.addObject(menuService.findOne(id));
 		return modelView;
@@ -44,7 +44,7 @@ public class UpdateMenuController {
 		}
 		ModelAndView model = new ModelAndView(page);
 		model.addObject("menuCategory", menuService.getMenuCategory());
-		model.addObject("images", menuService.getMenuImages());
+		model.addObject("images", menuService.getMenuImageByCateg(menu.getCategory()));
 		return model;
 	}
 }

@@ -24,15 +24,11 @@ public class MenuService extends ProjGService<Menu> {
 		menuDataSource.put(MenuConstant.BEVERAGE, "Beverage");
 		menuDataSource.put(MenuConstant.DESSERTS, "Desserts");
 		menuDataSource.put(MenuConstant.MAIN, "Main");
-		menuDataSource.put(MenuConstant.SIDES, "Sides");
 		return menuDataSource;
 	}
 
-	public Map<String, String> getMenuImages() {
+	public Map<String, String> getMenuImageByCateg(String category) {
 		Map<String, String> menuImages = new HashMap<String, String>();
-		menuImages.put("projg/images/main/fusilli_definition_picture_167290.jpg", "1");
-		menuImages.put("projg/images/main/food_picture_01_hd_pictures_167558.jpg", "2");
-		menuImages.put("projg/images/main/food_picture_03_hd_pictures_167556.jpg", "3");
 		return menuImages;
 	}
 

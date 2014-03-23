@@ -24,7 +24,7 @@ public class CreateMenuController {
 	public ModelAndView begin(@ModelAttribute("menu") Menu menu, HttpServletRequest req) {
 		ModelAndView modelView = new ModelAndView("menu/createMenu");
 		modelView.addObject("menuCategory", menuService.getMenuCategory());
-		modelView.addObject("images", menuService.getMenuImages());
+		modelView.addObject("images", menuService.getMenuImageByCateg(menu.getCategory()));
 		return modelView;
 	}
 
@@ -39,7 +39,7 @@ public class CreateMenuController {
 		}
 		ModelAndView model = new ModelAndView(page);
 		model.addObject("menuCategory", menuService.getMenuCategory());
-		model.addObject("images", menuService.getMenuImages());
+		model.addObject("images", menuService.getMenuImageByCateg(menu.getCategory()));
 		return model;
 	}
 }
