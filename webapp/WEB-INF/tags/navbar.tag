@@ -9,14 +9,14 @@
 
 <nav class="navbar navbar-default">
 	<div class="navbar-header">
-		<a class="navbar-brand glyphicon glyphicon-home" href="#"
+		<a href="#" class="navbar-brand glyphicon glyphicon-home" href="#"
 			onclick="load('index.g');"></a>
 	</div>
 	<ul class="nav navbar-nav">
 		<c:forEach var="entry" items="${items}">
 			<c:if test="${empty entry.childs}">
 				<c:if test="${!empty entry.uri}">
-					<li><a onclick="load('${entry.uri}')"><spring:message
+					<li><a href="#" onclick="load('${entry.uri}')"><spring:message
 								code="${entry.label}" text="${entry.label}" /></a></li>
 				</c:if>
 				<c:if test="${!empty entry.href}">
@@ -57,9 +57,9 @@
 					<h4 class="modal-title">User Settings</h4>
 				</div>
 				<div class="modal-body list-group">
-					<a class="list-group-item">Change User</a>
-					<a class="list-group-item">Change Password</a>
-					<a class="list-group-item">Logout</a>
+					<a href="#" class="list-group-item">Change User</a>
+					<a href="#" class="list-group-item">Change Password</a>
+					<a href="#" class="list-group-item">Logout</a>
 				</div>
 				<div class="modal-footer"></div>
 			</div>

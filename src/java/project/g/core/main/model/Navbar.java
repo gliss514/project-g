@@ -8,6 +8,9 @@ import project.g.core.data.BaseObject;
 
 @Document
 public class Navbar extends BaseObject {
+	
+	private static final long serialVersionUID = 3582769539927135956L;
+
 	private String label;
 
 	private String uri;

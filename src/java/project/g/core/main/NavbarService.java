@@ -15,14 +15,17 @@ public class NavbarService {
 		List<Navbar> contents = new ArrayList<Navbar>();
 
 		// Menu
-		contents.add(createNavbar("gres.navbar.menu", "menu.g"));
+		contents.add(createNavbar("gres.navbar.customer.master", "searchCustomer.g"));
+		contents.add(createNavbar("gres.navbar.sales.contract", "searchSalesContract.g"));
 
 		// Order
+		 /*
 		List<Navbar> makeOrder = new ArrayList<Navbar>();
 		makeOrder.add(createNavbar("gres.navbar.dine-in", "order.g"));
 		makeOrder.add(createNavbar("gres.navbar.order.online", "orderOnline.g"));
 		contents.add(createNavbar("gres.navbar.make.order", "#", makeOrder));
-
+		*/
+		
 		// Admin
 		List<Navbar> adminPanel = new ArrayList<Navbar>();
 		adminPanel.add(createNavbar("gres.title.manage.menu", "viewMenu.g"));
@@ -30,13 +33,13 @@ public class NavbarService {
 		contents.add(createNavbar("navbar.admin", "#", adminPanel));
 
 		// Themes
-		List<Navbar> themes = new ArrayList<Navbar>();
-		themes.add(createHrefNavbar("theme.default", "?theme=default"));
-		themes.add(createHrefNavbar("theme.lumen", "?theme=lumen-ui"));
-		themes.add(createHrefNavbar("theme.yeti", "?theme=yeti-ui"));
-		themes.add(createHrefNavbar("theme.flatly", "?theme=flatly-ui"));
-		themes.add(createHrefNavbar("theme.cerulean", "?theme=cerulean-ui"));
-		contents.add(createNavbar("navbar.themes", "#", themes));
+		// List<Navbar> themes = new ArrayList<Navbar>();
+		// themes.add(createHrefNavbar("theme.default", "?theme=default"));
+		// themes.add(createHrefNavbar("theme.lumen", "?theme=lumen-ui"));
+		// themes.add(createHrefNavbar("theme.yeti", "?theme=yeti-ui"));
+		// themes.add(createHrefNavbar("theme.flatly", "?theme=flatly-ui"));
+		// themes.add(createHrefNavbar("theme.cerulean", "?theme=cerulean-ui"));
+		// contents.add(createNavbar("navbar.themes", "#", themes));
 
 		return contents;
 	}

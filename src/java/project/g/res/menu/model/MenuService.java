@@ -19,9 +19,9 @@ public class MenuService extends ProjGService<Menu> {
 
 	@Autowired
 	private ServletContext servletContext;
-
+	
 	@Autowired
-	private ProjGRepository<Menu> projGRepository;
+	private MenuRepository menuRepository;
 
 	public Map<String, String> getMenuCategory() {
 		Map<String, String> menuDataSource = new HashMap<String, String>();
@@ -50,13 +50,13 @@ public class MenuService extends ProjGService<Menu> {
 
 	@Override
 	protected ProjGRepository<Menu> getRepository() {
-		return projGRepository;
+		return menuRepository;
 	}
 
 	public List<Menu> findByCodeLikeAndNameLikeAndCategoryLike(Menu criteria) {
 		String code = StringUtils.isEmpty(criteria.getCode()) ? "" : criteria.getCode();
 		String name = StringUtils.isEmpty(criteria.getName()) ? "" : criteria.getName();
 		String category = StringUtils.isEmpty(criteria.getCategory()) ? "" : criteria.getCategory();
-		return projGRepository.findByCodeLikeAndNameLikeAndCategoryLike(code, name, category);
+		return menuRepository.findByCodeLikeAndNameLikeAndCategoryLike(code, name, category);
 	}
 }

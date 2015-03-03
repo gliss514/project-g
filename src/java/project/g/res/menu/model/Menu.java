@@ -16,7 +16,6 @@ public class Menu extends BaseObject {
 	@NotEmpty
 	private String code;
 
-	@NotEmpty
 	private String image;
 
 	@NotEmpty

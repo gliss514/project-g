@@ -65,12 +65,12 @@ public class ManageImagesController {
 				while ((read = inputStream.read(bytes)) != -1) {
 					outputStream.write(bytes, 0, read);
 				}
-
+				outputStream.close();
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
+		
 		return modelView;
 	}
 }
