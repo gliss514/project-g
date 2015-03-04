@@ -57,9 +57,7 @@
 					<h4 class="modal-title">User Settings</h4>
 				</div>
 				<div class="modal-body list-group">
-					<a href="#" class="list-group-item">Change User</a>
-					<a href="#" class="list-group-item">Change Password</a>
-					<a href="#" class="list-group-item">Logout</a>
+					<a href="index.g" class="list-group-item">Logout</a>
 				</div>
 				<div class="modal-footer"></div>
 			</div>

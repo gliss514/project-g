@@ -21,9 +21,9 @@ public class DeleteCustomerController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String post(HttpServletRequest req) {
-		String menuId = req.getParameter(WebConstant.OBJID);
-		if (menuId != null) {
-			customerService.delete(menuId);
+		String id = req.getParameter(WebConstant.OBJID);
+		if (id != null) {
+			customerService.delete(id);
 		}
 		return REDIRECT_SEARCH_PAGE;
 	}
