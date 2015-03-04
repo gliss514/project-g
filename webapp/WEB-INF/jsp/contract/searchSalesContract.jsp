@@ -6,36 +6,26 @@
 
 <gtag:container>
 	<gtag:form modelAttribute="salesContract" caption="gres.title.search.contract">
-		<button type="button" onclick="load('createSalesContract.g');"
-			class="btn btn-default">
-			<span class="glyphicon glyphicon-plus"></span> ${caption}
-		</button>
-		<br />
-		<br />
-		<table class="table table-bordered" id="salesContract">
-			<thead>
+		<gtag:table id="salesContract" newUrl="createSalesContract.g">
+			<tr>
+				<th>Customer Name</th>
+				<th>Date From</th>
+				<th>Date To</th>
+				<th>Days Remaining</th>
+				<th>Action</th>
+			</tr>
+			<c:forEach var="salesContract" items="${results}">
 				<tr>
-					<th>Customer Name</th>
-					<th>Date From</th>
-					<th>Date To</th>
-					<th>Days Remaining</th>
-					<th>Action</th>
+					<td>${salesContract.customer.name}</td>
+					<td><fmt:formatDate value="${salesContract.dateFrom}" pattern="dd/MM/yyyy" /></td>
+					<td><fmt:formatDate value="${salesContract.dateTo}" pattern="dd/MM/yyyy" /></td>
+					<td>${salesContract.daysRemaining}</td>
+					<td><gtag:action icon="pencil" tooltip="tooltip.update"
+							url="updateSalesContract.g?id=${salesContract.id}"></gtag:action> &nbsp; <gtag:action
+							icon="trash" tooltip="tooltip.delete"
+							url="deleteSalesContract.g?id=${salesContract.id}"></gtag:action></td>
 				</tr>
-			</thead>
-			<tbody>
-				<c:forEach var="salesContract" items="${results}">
-					<tr>
-						<td>${salesContract.customer.name}</td>
-						<td><fmt:formatDate value="${salesContract.dateFrom}" pattern="dd/MM/yyyy" /></td>
-						<td><fmt:formatDate value="${salesContract.dateTo}" pattern="dd/MM/yyyy" /></td>
-						<td>${salesContract.daysRemaining}</td>
-						<td><gtag:action icon="pencil" tooltip="tooltip.update"
-								url="updateSalesContract.g?id=${salesContract.id}"></gtag:action> &nbsp; <gtag:action
-								icon="trash" tooltip="tooltip.delete"
-								url="deleteSalesContract.g?id=${salesContract.id}"></gtag:action></td>
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
+			</c:forEach>
+		</gtag:table>
 	</gtag:form>
 </gtag:container>
