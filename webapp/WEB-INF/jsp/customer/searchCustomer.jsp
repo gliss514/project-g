@@ -8,12 +8,14 @@
 		<gtag:table id="customer" newUrl="createCustomer.g">
 			<tr>
 				<th>Code</th>
+				<th>Company Name</th>
 				<th>Name</th>
 				<th>Action</th>
 			</tr>
 			<c:forEach var="customer" items="${results}">
 				<tr>
 					<td>${customer.code}</td>
+					<td>${customer.companyName}</td>
 					<td>${customer.name}</td>
 					<td>
 						<gtag:action icon="pencil" tooltip="tooltip.update" url="updateCustomer.g?id=${customer.id}"> </gtag:action>
