@@ -26,6 +26,8 @@ public class Customer extends BaseObject {
 
 	private String contactNo;
 
+	private String salesPerson;
+
 	public String getName() {
 		return name;
 	}
@@ -84,6 +86,14 @@ public class Customer extends BaseObject {
 
 	public void setEmailAddress(String emailAddress) {
 		this.emailAddress = emailAddress;
+	}
+
+	public String getSalesPerson() {
+		return salesPerson;
+	}
+
+	public void setSalesPerson(String salesPerson) {
+		this.salesPerson = salesPerson;
 	}
 
 }

@@ -27,6 +27,8 @@ public class SalesContract extends BaseObject {
 
 	private String daysRemaining;
 
+	private String relatedDocuments;
+
 	public String getCustomerCode() {
 		return customerCode;
 	}
@@ -73,5 +75,13 @@ public class SalesContract extends BaseObject {
 
 	public void setDaysRemaining(String daysRemaining) {
 		this.daysRemaining = daysRemaining;
+	}
+
+	public String getRelatedDocuments() {
+		return relatedDocuments;
+	}
+
+	public void setRelatedDocuments(String relatedDocuments) {
+		this.relatedDocuments = relatedDocuments;
 	}
 }

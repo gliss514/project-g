@@ -12,6 +12,7 @@
 			<gtag:select name="customerCode" label="label.name" mandatory="yes" items="${customerList}"></gtag:select>
 			<gtag:datepicker name="dateFrom" label="label.dateFrom" mandatory="yes"></gtag:datepicker>
 			<gtag:datepicker name="dateTo" label="label.dateTo" mandatory="yes"></gtag:datepicker>
+			<gtag:imagepicker items="${images}" name="image"></gtag:imagepicker>
 			<gtag:buttoncontainer>
 				<gtag:submit/>
 				<gtag:button href="searchSalesContract.g" label="label.cancel"/>

@@ -16,6 +16,7 @@
 			<gtag:textinput name="address" label="label.address" mandatory="yes" placeholder="Address"></gtag:textinput>
 			<gtag:textinput name="contactNo" label="label.contactNo" mandatory="yes" placeholder="Contact No."></gtag:textinput>
 			<gtag:textinput name="emailAddress" label="label.emailAddress" mandatory="yes" placeholder="Email Address"></gtag:textinput>
+			<gtag:textinput name="salesPerson" label="label.salesPerson" mandatory="yes" placeholder="Address"></gtag:textinput>
 			<gtag:buttoncontainer>
 				<gtag:submit/>
 				<gtag:button href="searchCustomer.g" label="label.cancel"/>
