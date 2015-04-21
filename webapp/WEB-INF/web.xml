@@ -27,6 +27,6 @@
 	</servlet-mapping>
 
 	<welcome-file-list>
-		<welcome-file>index.g</welcome-file>
+		<welcome-file>main.g</welcome-file>
 	</welcome-file-list>
 </web-app>

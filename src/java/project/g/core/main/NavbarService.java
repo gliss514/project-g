@@ -26,12 +26,14 @@ public class NavbarService {
 		contents.add(createNavbar("gres.navbar.make.order", "#", makeOrder));
 		*/
 		
+		/*
 		// Admin
 		List<Navbar> adminPanel = new ArrayList<Navbar>();
 		adminPanel.add(createNavbar("gres.title.manage.menu", "viewMenu.g"));
 		adminPanel.add(createNavbar("gres.title.manage.menu.image", "manageImages.g"));
 		contents.add(createNavbar("navbar.admin", "#", adminPanel));
-
+		 */
+		
 		// Themes
 		// List<Navbar> themes = new ArrayList<Navbar>();
 		// themes.add(createHrefNavbar("theme.default", "?theme=default"));
