@@ -25,6 +25,8 @@ public class SalesContract extends BaseObject {
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date dateTo;
 
+	private String monthsRemaining;
+	
 	private String daysRemaining;
 
 	private String relatedDocuments;
@@ -75,6 +77,14 @@ public class SalesContract extends BaseObject {
 
 	public void setDaysRemaining(String daysRemaining) {
 		this.daysRemaining = daysRemaining;
+	}
+
+	public String getMonthsRemaining() {
+		return monthsRemaining;
+	}
+
+	public void setMonthsRemaining(String monthsRemaining) {
+		this.monthsRemaining = monthsRemaining;
 	}
 
 	public String getRelatedDocuments() {

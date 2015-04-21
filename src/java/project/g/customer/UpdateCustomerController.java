@@ -1,5 +1,8 @@
 package project.g.customer;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
@@ -29,6 +32,7 @@ public class UpdateCustomerController {
 		String id = (String) req.getParameter(WebConstant.OBJID);
 		Customer prevCustomer = customerService.findOne(id);
 		modelView.addObject(prevCustomer);
+		initDropdowns(modelView);
 		return modelView;
 	}
 
@@ -44,6 +48,11 @@ public class UpdateCustomerController {
 			System.out.println(result.getAllErrors().get(0).getDefaultMessage());
 		}
 		ModelAndView model = new ModelAndView(page);
+		initDropdowns(model);
 		return model;
+	}
+	
+	private void initDropdowns(ModelAndView model){
+		model.addObject("typeList", customerService.getTypeList());
 	}
 }

@@ -26,7 +26,8 @@ public class SearchSalesContractController {
 		ModelAndView modelView = new ModelAndView("contract/searchSalesContract");
 		Iterable<SalesContract> salesContractIter = salesContractService.findAll();
 		for (SalesContract contract : salesContractIter) {
-			contract.setDaysRemaining(getDaysRemaining(contract.getDateFrom(), contract.getDateTo()));
+			contract.setDaysRemaining(getDaysRemaining(contract.getDateTo()));
+			contract.setMonthsRemaining(getMonthsRemaining(contract.getDateTo()));
 		}
 		modelView.addObject("results", salesContractIter);
 		return modelView;
@@ -38,8 +39,15 @@ public class SearchSalesContractController {
 		return modelView;
 	}
 	
-	private String getDaysRemaining(Date dateFrom, Date dateTo){
-		long diff = dateTo.getTime() - dateFrom.getTime();
-		return String.valueOf(diff / 1000 / 60 / 60 / 24);
+	private String getDaysRemaining(Date dateTo){
+		long diff = dateTo.getTime() - new Date().getTime();
+		long days = diff / 1000 / 60 / 60 / 24;
+		return String.valueOf(days);
+	}
+	
+	private String getMonthsRemaining(Date dateTo){
+		long diff = dateTo.getTime() - new Date().getTime();
+		long mths = diff / 1000 / 60 / 60 / 24 / 30;
+		return String.valueOf(mths);
 	}
 }

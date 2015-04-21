@@ -14,13 +14,12 @@ public class Customer extends BaseObject {
 	private String name;
 
 	private String code;
+	
+	private String type;
 
 	private String companyName;
 
 	private String emailAddress;
-
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
-	private Date dob;
 
 	private String address;
 
@@ -39,17 +38,17 @@ public class Customer extends BaseObject {
 	public String getCode() {
 		return code;
 	}
+	
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-
-	public Date getDob() {
-		return dob;
-	}
-
-	public void setDob(Date dob) {
-		this.dob = dob;
 	}
 
 	public String getAddress() {

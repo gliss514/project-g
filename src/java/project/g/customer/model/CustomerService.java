@@ -30,6 +30,15 @@ public class CustomerService extends ProjGService<Customer>{
 		}
 		return customerMap;
 	}
+	
+	public Map<String, String> getTypeList(){
+		Map<String, String> typeMap = new HashMap<>();
+		
+		typeMap.put("", "-- Select Type --");
+		typeMap.put("Consumer", "Consumer");
+		typeMap.put("SME", "SME");
+		return typeMap;
+	}
 
 	@Override
 	protected ProjGRepository<Customer> getRepository() {

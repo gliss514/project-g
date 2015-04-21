@@ -10,6 +10,7 @@
 				<th>Code</th>
 				<th>Company Name</th>
 				<th>Name</th>
+				<th>Type</th>
 				<th>Action</th>
 			</tr>
 			<c:forEach var="customer" items="${results}">
@@ -17,6 +18,7 @@
 					<td>${customer.code}</td>
 					<td>${customer.companyName}</td>
 					<td>${customer.name}</td>
+					<td>${customer.type}</td>
 					<td>
 						<gtag:action icon="pencil" tooltip="tooltip.update" url="updateCustomer.g?id=${customer.id}"> </gtag:action>
 						<gtag:action icon="trash" tooltip="tooltip.delete" url="deleteCustomer.g?id=${customer.id}"></gtag:action>

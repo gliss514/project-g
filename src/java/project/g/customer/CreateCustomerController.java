@@ -24,6 +24,7 @@ public class CreateCustomerController {
 	public ModelAndView begin(@ModelAttribute("customer") Customer customer,
 			HttpServletRequest req) {
 		ModelAndView modelView = new ModelAndView("customer/createCustomer");
+		initDropdowns(modelView);
 		return modelView;
 	}
 
@@ -38,6 +39,11 @@ public class CreateCustomerController {
 			System.out.println(result.getAllErrors().get(0).getDefaultMessage());
 		}
 		ModelAndView model = new ModelAndView(page);
+		initDropdowns(model);
 		return model;
+	}
+	
+	private void initDropdowns(ModelAndView model){
+		model.addObject("typeList", customerService.getTypeList());
 	}
 }
