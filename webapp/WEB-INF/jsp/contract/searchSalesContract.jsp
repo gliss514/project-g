@@ -12,6 +12,7 @@
 				<th>Customer Name</th>
 				<th>Date From</th>
 				<th>Date To</th>
+				<th>No. of lines</th>
 				<th>Month(s) Remaining</th>
 				<th>Day(s) Remaining</th>
 				<th>Action</th>
@@ -22,6 +23,7 @@
 					<td>${salesContract.customer.name}</td>
 					<td><fmt:formatDate value="${salesContract.dateFrom}" pattern="dd/MM/yyyy" /></td>
 					<td><fmt:formatDate value="${salesContract.dateTo}" pattern="dd/MM/yyyy" /></td>
+					<td>${salesContract.numberOfLines}</td>
 					<td>${salesContract.monthsRemaining}</td>
 					<td>${salesContract.daysRemaining}</td>
 					<td><gtag:action icon="pencil" tooltip="tooltip.update"

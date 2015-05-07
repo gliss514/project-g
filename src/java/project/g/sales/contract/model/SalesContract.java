@@ -25,8 +25,10 @@ public class SalesContract extends BaseObject {
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date dateTo;
 
+	private int numberOfLines;
+
 	private String monthsRemaining;
-	
+
 	private String daysRemaining;
 
 	private String relatedDocuments;
@@ -41,6 +43,14 @@ public class SalesContract extends BaseObject {
 
 	public String getSalesNo() {
 		return salesNo;
+	}
+
+	public int getNumberOfLines() {
+		return numberOfLines;
+	}
+
+	public void setNumberOfLines(int numberOfLines) {
+		this.numberOfLines = numberOfLines;
 	}
 
 	public void setSalesNo(String salesNo) {

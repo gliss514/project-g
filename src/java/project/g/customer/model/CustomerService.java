@@ -26,7 +26,7 @@ public class CustomerService extends ProjGService<Customer>{
 		Iterable<Customer> customerIter = findAll();
 		customerMap.put("", "-- Select Customer --");
 		for(Customer cust : customerIter){
-			customerMap.put(cust.getCode(), cust.getName());
+			customerMap.put(cust.getCode(), cust.getCompanyName());
 		}
 		return customerMap;
 	}

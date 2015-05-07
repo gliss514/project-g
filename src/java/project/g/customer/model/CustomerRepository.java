@@ -8,5 +8,5 @@ import project.g.core.data.ProjGRepository;
 public interface CustomerRepository extends ProjGRepository<Customer>{
 	
 	Customer findByCode(String code);
-
+	
 }
